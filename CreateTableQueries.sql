@@ -54,13 +54,11 @@ CREATE TABLE IF NOT EXISTS Purchases (
     SupplierID       INT NOT NULL,
     PurchaseDate     DATE NOT NULL,
     TotalAmount      DECIMAL(10,2) NOT NULL,
-    PharmacyID       INT NOT NULL,
     UserID           INT NOT NULL,
 
     CHECK (TotalAmount > 0),
 
     FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID),
-    FOREIGN KEY (PharmacyID) REFERENCES Pharmacies(PharmacyID),
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
